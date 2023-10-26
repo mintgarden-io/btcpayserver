@@ -1328,5 +1328,12 @@
        "divisibility":18,
        "symbol":null,
        "crypto":true
-   }
+   },
+   {
+       "name": "Chia",
+       "code": "XCH",
+       "divisibility": 12,
+       "symbol": null,
+       "crypto": true
+  }
 ]

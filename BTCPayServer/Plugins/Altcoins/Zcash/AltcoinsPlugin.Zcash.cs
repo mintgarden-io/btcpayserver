@@ -31,6 +31,7 @@ public partial class AltcoinsPlugin
         var blockExplorerLink = ChainName == ChainName.Mainnet
                     ? "https://www.exploreZcash.com/transaction/{0}"
                     : "https://testnet.xmrchain.net/tx/{0}";
+
         services.AddBTCPayNetwork(network)
                 .AddTransactionLinkProvider(new Payments.PaymentMethodId("ZEC", PaymentTypes.BTCLike), new SimpleTransactionLinkProvider(blockExplorerLink));
     }
