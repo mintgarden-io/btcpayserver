@@ -21,7 +21,7 @@
                 </a>
             </small>
         </h3>
-        <p>Connect BTCPay Server to your Shopify checkout experience to accept Bitcoin.</p>
+        <p>Connect XCHPay.me to your Shopify checkout experience to accept XCH.</p>
 
         @if (!ViewContext.ModelState.IsValid)
         {
@@ -64,7 +64,7 @@
                     <h5 class="alert-heading">In Shopify, please do the following …</h5> 
                     <ul>
                         <li>
-                            Add a payment method at <a href="@shopifyUrl/admin/settings/payments" class="alert-link fw-bold" target="_blank" rel="noreferrer noopener">Settings &gt; Payments &gt; Manual Payment Methods</a> with the name <strong>Bitcoin with BTCPay Server</strong>
+                            Add a payment method at <a href="@shopifyUrl/admin/settings/payments" class="alert-link fw-bold" target="_blank" rel="noreferrer noopener">Settings &gt; Payments &gt; Manual Payment Methods</a> with the name <strong>XCH with XCHPay.me</strong>
                         </li>
                         <li>
                             Paste this script at <a href="@shopifyUrl/admin/settings/checkout#PolarisTextField1" class="fw-bold alert-link" target="_blank" rel="noreferrer noopener">Settings &gt; Checkout &gt; Order Processing &gt; Additional Scripts</a>:
