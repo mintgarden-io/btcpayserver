@@ -92,7 +92,7 @@ namespace BTCPayServer.Services.Altcoins.Chia.Payments
                     cryptoInfo.GetDue().Value,
                     null);
                 // model.InvoiceBitcoinUrl = cryptoInfo.Address;
-                model.InvoiceBitcoinUrlQR = model.InvoiceBitcoinUrl;
+                model.InvoiceBitcoinUrlQR = "";
             }
             else
             {
