@@ -1,9 +1,11 @@
+#if ALTCOINS
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BTCPayServer.Common.Altcoins.Chia.RPC.Models;
+using BTCPayServer.Plugins.Altcoins;
+using BTCPayServer.Plugins.Altcoins.Chia.RPC.Models;
 using BTCPayServer.Events;
 using BTCPayServer.Payments;
 using BTCPayServer.Services.Altcoins.Chia.Services;
@@ -90,7 +92,7 @@ public class ChiaLikePaymentHandler
         var tasks = accountToAddressQuery.ToDictionary(datas => datas.Key,
             datas => ChiaWalletRpcClient.SendCommandAsync<GetTransactionsRequest, GetTransactionsResponse>(
                 "get_transactions",
-                new GetTransactionsRequest() { WalletId = datas.Key, SortKey = "CONFIRMED_AT_HEIGHT", Reverse = true}));
+                new GetTransactionsRequest() { WalletId = datas.Key, SortKey = "CONFIRMED_AT_HEIGHT", Reverse = true, Confirmed = true }));
 
         await Task.WhenAll(tasks.Values);
 
@@ -204,3 +206,4 @@ public class ChiaLikePaymentHandler
             new InvoiceEvent(invoice, InvoiceEvent.ReceivedPayment) { Payment = payment });
     }
 }
+#endif

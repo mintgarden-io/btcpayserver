@@ -1,6 +1,6 @@
 using System;
 
-namespace BTCPayServer.Common.Altcoins.Chia.RPC
+namespace BTCPayServer.Plugins.Altcoins.Chia.RPC
 {
     /// <summary>
     /// Information about how to connect and authenticate with the RPC endpoint

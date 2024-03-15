@@ -1,6 +1,7 @@
 #if ALTCOINS
 using BTCPayServer.Client.Models;
-using BTCPayServer.Common.Altcoins.Chia.Utils;
+using BTCPayServer.Plugins.Altcoins;
+using BTCPayServer.Plugins.Altcoins.Chia.Utils;
 using BTCPayServer.Payments;
 using BTCPayServer.Services.Invoices;
 

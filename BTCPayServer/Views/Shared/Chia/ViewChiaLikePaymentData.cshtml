@@ -1,10 +1,12 @@
 @using System.Globalization
 @using BTCPayServer.Components.TruncateCenter
+@using BTCPayServer.Plugins.Altcoins;
 @using BTCPayServer.Services
 @using BTCPayServer.Services.Altcoins.Chia.Payments
 @using BTCPayServer.Services.Altcoins.Chia.UI
 @inject DisplayFormatter DisplayFormatter
 @model IEnumerable<BTCPayServer.Services.Invoices.PaymentEntity>
+@inject TransactionLinkProviders TransactionLinkProviders
 
 @{
     var payments = Model.Where(entity => entity.GetPaymentMethodId().PaymentType == ChiaPaymentType.Instance).Select(payment =>
@@ -27,7 +29,7 @@
 
         m.TransactionId = onChainPaymentData.TransactionId;
         m.ReceivedTime = payment.ReceivedTime;
-        m.TransactionLink = string.Format(CultureInfo.InvariantCulture, payment.Network.BlockExplorerLink, m.TransactionId);
+		m.TransactionLink = TransactionLinkProviders.GetTransactionLink(payment.GetPaymentMethodId(), onChainPaymentData.TransactionId);
         return m;
     }).ToList();
 }

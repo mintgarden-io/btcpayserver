@@ -1,7 +1,7 @@
 #if ALTCOINS
 using System;
 using System.Collections.Generic;
-using BTCPayServer.Common.Altcoins.Chia.RPC;
+using BTCPayServer.Plugins.Altcoins.Chia.RPC;
 using BTCPayServer.Services.Altcoins.Chia.RPC;
 
 namespace BTCPayServer.Services.Altcoins.Chia.Configuration

@@ -1,9 +1,10 @@
+#if ALTCOINS
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.IO;
-using BTCPayServer.Common.Altcoins.Chia.RPC;
+using BTCPayServer.Plugins.Altcoins.Chia.RPC;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using YamlDotNet.Serialization;
@@ -224,3 +225,4 @@ namespace BTCPayServer.Services.Altcoins.Chia.Services
 #pragma warning restore CS8714 // The type cannot be used as type parameter in the generic type or method. Nullability of type argument doesn't match 'notnull' constraint.
     }
 }
+#endif

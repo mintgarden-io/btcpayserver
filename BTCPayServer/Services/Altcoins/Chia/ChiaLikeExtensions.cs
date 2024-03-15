@@ -4,7 +4,8 @@ using System.IO;
 using System.Linq;
 using BTCPayServer.Abstractions.Contracts;
 using BTCPayServer.Abstractions.Services;
-using BTCPayServer.Common.Altcoins.Chia.RPC;
+using BTCPayServer.Plugins.Altcoins;
+using BTCPayServer.Plugins.Altcoins.Chia.RPC;
 using BTCPayServer.Configuration;
 using BTCPayServer.Payments;
 using BTCPayServer.Services.Altcoins.Chia.Configuration;
@@ -58,14 +59,7 @@ namespace BTCPayServer.Services.Altcoins.Chia
             var btcPayNetworkProvider = serviceProvider.GetService<BTCPayNetworkProvider>();
             var result = new ChiaLikeConfiguration();
 
-            var supportedChains = configuration
-                .GetOrDefault<string>("chains", string.Empty)
-                .Split(',', StringSplitOptions.RemoveEmptyEntries)
-                .Select(t => t.ToUpperInvariant());
-
-            var supportedNetworks = btcPayNetworkProvider
-                .Filter(supportedChains.ToArray())
-                .GetAll()
+            var supportedNetworks = btcPayNetworkProvider.GetAll()
                 .OfType<ChiaLikeSpecificBtcPayNetwork>();
 
             foreach (var ChiaLikeSpecificBtcPayNetwork in supportedNetworks)

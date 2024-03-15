@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace BTCPayServer.Common.Altcoins.Chia.RPC
+namespace BTCPayServer.Plugins.Altcoins.Chia.RPC
 {
     /// <summary>
     /// Helper class for loading certificates
@@ -39,7 +39,7 @@ namespace BTCPayServer.Common.Altcoins.Chia.RPC
                 .Replace("-----END PRIVATE KEY-----", string.Empty)
                 .Replace(Environment.NewLine, string.Empty)
                 .ToString();
-            
+
             using var rsa = RSA.Create();
             try
             {

@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace BTCPayServer.Common.Altcoins.Chia.Utils
+namespace BTCPayServer.Plugins.Altcoins.Chia.Utils
 {
     public class ChiaMoney
     {

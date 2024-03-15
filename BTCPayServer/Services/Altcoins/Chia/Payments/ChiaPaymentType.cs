@@ -44,11 +44,6 @@ namespace BTCPayServer.Services.Altcoins.Chia.Payments
             return JsonConvert.DeserializeObject<ChiaSupportedPaymentMethod>(value.ToString());
         }
 
-        public override string GetTransactionLink(BTCPayNetworkBase network, string txId)
-        {
-            return string.Format(CultureInfo.InvariantCulture, network.BlockExplorerLink, txId);
-        }
-
         public override string GetPaymentLink(BTCPayNetworkBase network, InvoiceEntity invoice, IPaymentMethodDetails paymentMethodDetails, decimal cryptoInfoDue, string serverUri)
         {
             return paymentMethodDetails.Activated

@@ -68,6 +68,8 @@ namespace BTCPayServer.Plugins.Altcoins
                 InitMonero(services);
             if (selectedChains.Contains("ZEC"))
                 InitZcash(services);
+            if (selectedChains.Contains("XCH"))
+                InitChia(services);
         }
     }
 }

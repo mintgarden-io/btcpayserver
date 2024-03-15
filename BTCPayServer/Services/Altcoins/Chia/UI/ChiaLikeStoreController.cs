@@ -11,7 +11,7 @@ using BTCPayServer.Abstractions.Constants;
 using BTCPayServer.Abstractions.Extensions;
 using BTCPayServer.Abstractions.Models;
 using BTCPayServer.Client;
-using BTCPayServer.Common.Altcoins.Chia.RPC.Models;
+using BTCPayServer.Plugins.Altcoins.Chia.RPC.Models;
 using BTCPayServer.Data;
 using BTCPayServer.Filters;
 using BTCPayServer.Models;
