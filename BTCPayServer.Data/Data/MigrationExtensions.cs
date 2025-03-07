@@ -127,6 +127,7 @@ namespace BTCPayServer.Data
                 { Type: "CHAIN", CryptoCode: var code } when code == "XMR" => 12,
                 { Type: "CHAIN" } => 8,
                 { Type: "LEGACY" } => 18,
+                { Type: "CHIA" } => 12,
                 _ => 8
             };
         }
@@ -142,6 +143,7 @@ namespace BTCPayServer.Data
                     "LightningLike" or "LightningNetwork" => $"{cryptoCode}-LN",
                     "LNURLPAY" => $"{cryptoCode}-LNURL",
                     "EthereumLike" => $"{cryptoCode}-LEGACY",
+                    "ChiaLike" => $"{cryptoCode}-CHIA",
                     _ => throw new NotSupportedException("Unknown payment type " + paymentType)
                 };
             }
